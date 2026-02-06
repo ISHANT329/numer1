@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Rose Day Leeza</title>
+    <style>
+        :root {
+            --rose: #d6336c;
+            --green: #2f7d32;
+            --bg1: #fff0f3;
+            --bg2: #ffe6eb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, var(--bg1), var(--bg2));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Background flowers */
+        .bg-flowers span {
+            position: fixed;
+            font-size: 28px;
+            opacity: 0.15;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(110vh) rotate(0deg); }
+            to { transform: translateY(-10vh) rotate(360deg); }
+        }
+
+        /* Falling petals */
+        .petals span {
+            position: fixed;
+            top: -50px;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 420px;
+            padding: 40px 30px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            animation: fadeIn 2s ease;
+            z-index: 1;
+        }
+
+        h1 {
+            color: var(--rose);
+            font-size: 2.7rem;
+            margin-bottom: 5px;
+        }
+
+        .soft-title {
+            font-size: 1.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #b0204d;
+            padding: 12px 16px;
+            border-radius: 14px;
+            background: rgba(255, 230, 235, 0.8);
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(255,182,193,0.25) 0px,
+                rgba(255,182,193,0.25) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            display: inline-block;
+        }
+
+        .glow {
+            display: inline-block;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #ff4d6d;
+            animation: glowPulse 2s infinite alternate;
+            text-shadow: 0 0 8px rgba(255,77,109,0.6),
+                         0 0 16px rgba(255,77,109,0.5);
+        }
+
+        @keyframes glowPulse {
+            from {
+                text-shadow: 0 0 6px rgba(255,77,109,0.4),
+                             0 0 12px rgba(255,77,109,0.3);
+                transform: scale(1);
+            }
+            to {
+                text-shadow: 0 0 12px rgba(255,77,109,0.8),
+                             0 0 24px rgba(255,77,109,0.7),
+                             0 0 36px rgba(255,77,109,0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        h2 {
+            color: #b0204d;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* Rose */
+        .rose {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 30px auto 15px;
+            animation: bloom 3s infinite alternate ease-in-out;
+        }
+
+        .petal {
+            position: absolute;
+            width: 55px;
+            height: 85px;
+            background: var(--rose);
+            border-radius: 50% 50% 15% 15%;
+            left: 32px;
+            top: 5px;
+            transform-origin: bottom center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+        }
+
+        .p1 { transform: rotate(0deg); }
+        .p2 { transform: rotate(45deg); }
+        .p3 { transform: rotate(90deg); }
+        .p4 { transform: rotate(135deg); }
+        .p5 { transform: rotate(180deg); }
+        .p6 { transform: rotate(225deg); }
+        .p7 { transform: rotate(270deg); }
+        .p8 { transform: rotate(315deg); }
+
+        .stem {
+            width: 8px;
+            height: 150px;
+            background: var(--green);
+            margin: -10px auto 0;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .leaf {
+            width: 45px;
+            height: 22px;
+            background: var(--green);
+            border-radius: 50% 0 50% 0;
+            position: relative;
+            left: 25px;
+            top: -75px;
+        }
+
+        
+
+        .share a {
+            display: inline-block;
+            margin: 6px;
+            padding: 10px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        
+        
+
+        footer {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @keyframes bloom {
+            from { transform: scale(0.85) rotate(0deg); }
+            to { transform: scale(1.1) rotate(8deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+<!-- Falling petals -->
+<div class="petals">
+    <span style="left:10%; animation-duration:8s">🌹</span>
+    <span style="left:30%; animation-duration:10s">🌸</span>
+    <span style="left:50%; animation-duration:7s">🌹</span>
+    <span style="left:70%; animation-duration:9s">🌸</span>
+    <span style="left:90%; animation-duration:11s">🌹</span>
+</div>
+
+<!-- Background flowers -->
+<div class="bg-flowers">
+    <span style="left:5%; animation-duration:25s; animation-delay:0s">🌸</span>
+    <span style="left:15%; animation-duration:32s; animation-delay:3s">🌹</span>
+    <span style="left:30%; animation-duration:22s; animation-delay:1s">🌼</span>
+    <span style="left:45%; animation-duration:28s; animation-delay:4s">🌷</span>
+    <span style="left:60%; animation-duration:35s; animation-delay:2s">🌺</span>
+    <span style="left:75%; animation-duration:26s; animation-delay:5s">🌸</span>
+    <span style="left:90%; animation-duration:40s; animation-delay:6s">🌹</span>
+</div>
+
+<div class="card">
+    <h1 class="soft-title">Happy rose day, <span class="glow">my life</span> 🌹</h1>
+    
+
+    <p>"Some feelings are best sent as a rose."</p>
+
+    <div class="message">
+        I LOVE YOU ❤️
+        <br />
+        This rose is a small reminder of how special you are to me.
+    </div>
+
+    <div class="rose">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="petal p5"></div>
+        <div class="petal p6"></div>
+        <div class="petal p7"></div>
+        <div class="petal p8"></div>
+    </div>
+
+    <div class="stem"></div>
+    <div class="leaf"></div>
+
+    
+
+    <p style="margin-top:18px; font-size:1rem; color:#b0204d; font-style:italic;">Forever yours ♾️💗</p>
+
+    <footer>From Ishant 💖</footer>
+</div>
+
+</body>
+</html>
